@@ -72,7 +72,34 @@
     ?>
     </form>
 
+    <form action="">
+        <label for="">Insira sua altura (m))</label>
+        <input type="text" name="altura1">
 
+        <label for="">Insira seu gênero (M/F)</label>
+        <input type="text" name="genero">
+
+        <input type="submit" value="Enviar">
+
+        <?php
+
+        if (isset($_GET["altura1"]) && isset($_GET["genero"]))
+        {
+        $altura = $_GET["altura1"];
+        $genero = $_GET["genero"];
+
+            if ($genero == "M")
+            {
+                $peso = 72.7 * $altura - 58; 
+            }
+            else
+            {
+                $peso = (62.1 * $altura) - 44.7;
+            }
+
+                echo "Seu peso ideal é" . $peso;
+        }
+        ?> 
 
 </body>
 </html>
